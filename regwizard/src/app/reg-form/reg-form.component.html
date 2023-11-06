@@ -1,0 +1,41 @@
+<div class="container">
+    <h1>User registration</h1>
+    <form #register="ngForm" (ngSubmit)="submit(register)">
+        <div class="form-group">
+            <label for="login">Login</label>
+            <input #login="ngModel" required type="email" name="login" class="form-control" ngModel>
+            <div *ngIf = "login.touched && login.invalid" class="alert-danger">Login must be a valid email</div>
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input #pass="ngModel" required type="password" name="password" class="form-control" ngModel>
+            <div *ngIf = "pass.touched && pass.invalid" class="alert-danger">Password must contain min 1 digit and min 1 letter</div>
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <label for="confirmPassword">Confirm password</label>
+            <input #confirm="ngModel" required type="password" name="confirmPassword" class="form-control" ngModel>
+            <div *ngIf = "confirm.touched && confirm.invalid" class="alert-danger">Confirm password must be same with password</div>
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <input required type="checkbox" name="isAgree" class="form-control" ngModel>
+            <label for="isAgree">Agree to work for food</label>
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <label for="country">Country</label>
+            <input #country="ngModel" required type="text" name="country" class="form-control" ngModel>
+            <div *ngIf = "country.touched && country.invalid" class="alert-danger">Country is required field</div>
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <label for="province">Province</label>
+            <input #province="ngModel" required type="text" name="province" class="form-control" ngModel>
+            <div *ngIf = "province.touched && province.invalid" class="alert-danger">Province is required field</div>
+        </div>
+        <pre></pre>
+        <button class="btn btn-primary" type="submit" [disabled]="!register.valid">Save</button>
+    </form>
+</div>

@@ -26,7 +26,10 @@
         <pre></pre>
         <div class="form-group">
             <label for="country">Country</label>
-            <input #country="ngModel" required type="text" name="country" class="form-control" ngModel>
+            <select #country="ngModel" required class="select" name="country" ngModel>
+                <option selected></option>
+                <option *ngFor="let country of countries" [value]="country.id">{{ country.name }}</option>
+            </select>
             <div *ngIf = "country.touched && country.invalid" class="alert-danger">Country is required field</div>
         </div>
         <pre></pre>

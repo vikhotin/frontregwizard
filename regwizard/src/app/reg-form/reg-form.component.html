@@ -30,18 +30,19 @@
                 <option selected value="0"></option>
                 <option *ngFor="let country of countries" [value]="country.id">{{ country.name }}</option>
             </select>
-            <div *ngIf = "country.touched && country.invalid" class="alert-danger">Country is required field</div>
+            <div *ngIf = "country.touched && (country.invalid || country.value == 0)" class="alert-danger">Country is required field</div>
         </div>
         <pre></pre>
         <div class="form-group">
             <label for="province">Province</label>
-            <select #province="ngModel" required class="select" name="province" ngModel>
+            <select #province="ngModel" required class="select" name="provinceId" ngModel>
                 <option selected value="0"></option>
                 <option *ngFor="let province of provinces" [value]="province.id">{{ province.name }}</option>
             </select>
-            <div *ngIf = "province.touched && province.invalid" class="alert-danger">Province is required field</div>
+            <div *ngIf = "province.touched && (province.invalid || province.value == 0)" class="alert-danger">Province is required field</div>
         </div>
         <pre></pre>
         <button class="btn btn-primary" type="submit" [disabled]="!register.valid">Save</button>
+        <div *ngIf = "error == true" class="alert-danger">Error occured</div>
     </form>
 </div>

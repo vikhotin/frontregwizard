@@ -1,14 +1,21 @@
 div{
     text-align: center;
+    width: 50%;
+    margin: 0 auto;
 }
 label{
-    text-align: left;
+    text-align: center;
+    width: auto;
+}
+.form-group{
+    text-align: center;
 }
 .alert-danger{
     color:red;
+    width: auto;
 }
 .alert{
     color: white;
     margin-bottom: 15px;
-    text-align: left;
+    text-align: center;
 }

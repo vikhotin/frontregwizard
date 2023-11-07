@@ -3,7 +3,7 @@
     <form #register="ngForm" (ngSubmit)="submit(register)">
         <div class="form-group">
             <label for="login">Login</label>
-            <input #login="ngModel" required type="email" name="login" class="form-control" ngModel>
+            <input #login="ngModel" required type="email" name="login" class="form-control" ngModel email>
             <div *ngIf = "login.touched && login.invalid" class="alert-danger">Login must be a valid email</div>
         </div>
         <pre></pre>
@@ -20,13 +20,13 @@
         </div>
         <pre></pre>
         <div class="form-group">
-            <input required type="checkbox" name="isAgree" class="form-control" ngModel>
+            <input required type="checkbox" name="isAgree" class="form-check-input" ngModel>
             <label for="isAgree">Agree to work for food</label>
         </div>
         <pre></pre>
         <div class="form-group">
             <label for="country">Country</label>
-            <select #country="ngModel" required class="select" name="country" (ngModelChange)="onChange($event)" ngModel>
+            <select #country="ngModel" required class="select" name="countryId" class="form-select" (ngModelChange)="onChange($event)" ngModel>
                 <option selected value="0"></option>
                 <option *ngFor="let country of countries" [value]="country.id">{{ country.name }}</option>
             </select>
@@ -35,7 +35,7 @@
         <pre></pre>
         <div class="form-group">
             <label for="province">Province</label>
-            <select #province="ngModel" required class="select" name="provinceId" ngModel>
+            <select #province="ngModel" required class="select" name="provinceId" class="form-select" ngModel>
                 <option selected value="0"></option>
                 <option *ngFor="let province of provinces" [value]="province.id">{{ province.name }}</option>
             </select>

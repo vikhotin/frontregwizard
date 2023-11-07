@@ -1,6 +1,6 @@
 <div class="container">
     <h1>User registration</h1>
-    <form #register="ngForm" (ngSubmit)="submit(register)">
+    <form #register="ngForm" (ngSubmit)="submit(register)" [matchValue]="['password', 'confirmPassword']">
         <div class="form-group">
             <label for="login">Login</label>
             <input #login="ngModel" required type="email" name="login" class="form-control" ngModel email>
@@ -9,7 +9,7 @@
         <pre></pre>
         <div class="form-group">
             <label for="password">Password</label>
-            <input #pass="ngModel" required type="password" name="password" class="form-control" ngModel>
+            <input #pass="ngModel" required type="password" name="password" class="form-control" ngModel passwordCheck>
             <div *ngIf = "pass.touched && pass.invalid" class="alert-danger">Password must contain min 1 digit and min 1 letter</div>
         </div>
         <pre></pre>

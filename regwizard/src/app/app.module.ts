@@ -7,11 +7,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegFormComponent } from './reg-form/reg-form.component';
+import { MatchValueDirective } from './directives/match-value.directive';
+import { PasswordValidatorDirective } from './directives/password-validator';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegFormComponent
+    RegFormComponent,
+    MatchValueDirective,
+    PasswordValidatorDirective
   ],
   imports: [
     BrowserModule,
